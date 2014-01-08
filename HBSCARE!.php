@@ -2,7 +2,7 @@
 /*
 __PocketMine Plugin__
 name=HBSCARE
-description=It scare people! Random stuff! and POOP!
+description=It scare people! Random stuff!with autoUpdater-BETA
 version=3.0.0 - THE MEGA UPDATE!
 author=TrilogiForce
 class=HBScare
@@ -24,6 +24,7 @@ $this->api->console->register("hbab", "It says about the plugin", array($this, "
 $this->api->console->register("hbr", "Its a the start of a funny time!", array($this, "handleCommand"));
 $this->api->console->register("hbl", "Its a very funny command but please run first hbr!!!", array($this, "handleCommand"));
 $this->api->console->register("hbupd","UPDATE HBSCARE!!!!",array($this, "handlecommand"));
+$this->api->console->register("hbdr","runs a update without downloading it",array($this, "handlecommand"));
 $this->api->console->register("hbj","HERoBRiNe TeLls A rAndoM JokE!",array($this, "handlecommand"));
 console("§a[HerobrineScare]Please check if there's any update.");
 console("§a[HerobrineScare]or run the command /hbupd to update.");
@@ -95,7 +96,7 @@ break;
 case "hbdr":
 $this->api = $api;
 $server = ServerAPI::request();
-$this->api->plugin->load("");
+$this->api->plugin->load("https://raw.github.com/TrilogiForce/Herobrine-SCARE/master/HBSCARE!.php");
 break;
 case "hbra":
 $hbrandom = array("<Herobrine>Hahahha you tough i wasnt reaL?","<Herobrine> I am lookin' for u!!", "<Herobrine> this is stupid",
@@ -110,9 +111,10 @@ break;
 }
 }
 public function command($cmd, $args, $issuer, $alias, $params ){
-switch($cmd){-
+switch($cmd){
 case "hbtools":
 break;
 }
 }
 }
+
