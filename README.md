@@ -1,4 +1,4 @@
-                   Herobrine-SCARE
+Herobrine-SCARE
 ====================================================================
 
  Scare people with a chat message using /hb and more!
