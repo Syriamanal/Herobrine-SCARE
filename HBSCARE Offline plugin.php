@@ -56,7 +56,7 @@ $output .= 'Herobrine plugin §b3.0.0 ULTRA§r made it by §aTrilogiForce§r fix
 return $output;
 case "hbkill":
 $this->api->chat->broadcast("<Herobrine> I am going to kill you!!.");/*Modify me!*/
-$this -> api -> console -> run("kill @a");
+$this -> api -> console -> run("kill @all"); // added @all for faster core kill
 break;
 case "hbl":
 $this->api->chat->broadcast("<Herobrine> you think you are better than me?");/*Modify me!*/
@@ -68,11 +68,16 @@ $this -> api -> console -> run("kill herobrine");
 $this->api->chat->broadcast("<Server>Herobrine left the game.");/*Modify me!*/
 break;
 case "hbr":
-$this->api->chat->broadcast("<Server>Herobrine join the game.");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>HAHAHAHA");/*Modify me!*/
-$this->api->chat->broadcast("<Herobrine>Just God can help you now!!");/*Modify me!*/
-$this->api->chat->broadcast("<Server>God join the game");/*Modify me!*/
-$this->api->chat->broadcast("<Server>Herobrine left the game.");/*Modify me!*/
+$this->api->chat->broadcast("<Server> Herobrine join the game.");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Herobrine> HAHAHAHA");/*Modify me!*/
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("");
+$this->api->chat->broadcast("<Herobrine> Just God can help you now!!");/*Modify me!*/
+$this->api->chat->broadcast("<Server> God join the game");/*Modify me!*/
+$this->api->chat->broadcast("<Server> Herobrine left the game.");/*Modify me!*/
 break;
 case "hbupd":
 $file = @file_get_contents("http://bit.ly/HBSCARE");
